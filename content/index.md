@@ -4,18 +4,24 @@ title: "My title"
 Min me-sida i kursen oophp
 =========================
 
-[FIGURE src="image/me.jpg?w=500" caption="Bild på mig"]
+Hej!!!
 
-Detta är min me-sida i kursen. Denna sidan innehåller en presentation av mig själv. Underhåll denna sidan under hela kursen och uppdatera den efter hand och behov.
+<img src="img/thomas.jpg" alt="Thomas" width=300 style="float: right; margin-left: 1rem; margin-bottom: 1rem;">
 
-Så, en presentation en bra början. Skriv några ord om dig själv. Jag börjar.
+Tänkte skriva lite kort om mig själv. Jobbar sedan många år tillbaka på
+Enea Software i Stockholm. Officiellt är jag lärare men tillhör
+supportavdelningen. Vi utvecklar ett realtids OS som jag brukar säga är
+världens mest använda men minst kända operativsystem - OSE.
 
-Mitt namn är Mikael Roos. Född och uppvuxen i Bankeryd, Småland, strax utanför Jönköping, i ett villaområde som byggdes upp samtidigt som vi flyttade in där. Jag gillade landhockey och har spelat bandy och hockey samt gått bowlinggymnasiet i Nässjö. Jag har varit städare, diskare, kallskänka, servitör och kock. På ett bananskal landade jag i Ronneby när jag började högskolan 1990 där och nu är jag kvar med fru, barn och så vidare.
+Egentligen är hårdvarunära programmering inte min "grej" utan jag jobbar
+hellre med användare på UI-nivå. Jag har under det senaste året driftsatt ett
+e-learningsystem som heter Moodle och därav mitt intresse för kursen
+"Webprogrammering och databaser".  
+Av en slump kom jag för två år sedan i kontakt med ett verktyg för att ta fram
+onlinekurser (typ) - "Adapt". Jag tyckte det verkade krångligt på serversidan men
+efter att gått databaskursen inser jag att det är baserat på Node.js, och Express.
+Det var kul att få en förståelse av tekniken bakom och vad jag har installerat på servern.
 
-Programmering har alltid intresserat mig sedan 13-årsåldern och min första dator var en Spectravideo 328 med bandspelare.
-
-Om jag skall nämna någon hobby, förutom webbprogrammering, så får det bli att bära sten på sommarstugetomten, och det finns sten så det räcker och blir över.
-
-Till och från får jag för mig att börja på lite hobbies, ett år satsade jag på pokerspel, ett annat år var det geocaching och sedan turfing. Nu ligger jag lågt med hobbies, men något kanske dyker upp...?
-
-Vi syns och hörs i forum och chatt!
+Jag gick för flera år sedan två Oracle-kurser och en Python-kurs på KTH. Efter
+att ha tagit mig igenom kurspaketets första tre delkurser så ser jag nu med spänning
+fram mot vad delkursen "oophp" kan ge.

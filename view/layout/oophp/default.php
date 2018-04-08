@@ -11,16 +11,19 @@ namespace Anax\View;
 
 ?><!doctype html>
 <html>
-<head>
+<head lang="sv">
     <meta charset="utf-8">
     <title><?= $title ?? "No title" ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- Bootstrap stylesheet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <?php if (isset($favicon)) : ?>
     <link rel="icon" href="<?= $favicon ?>">
 <?php endif; ?>
 
 <?php foreach ($stylesheets as $stylesheet) : ?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?= asset($stylesheet) ?>">
 <?php endforeach; ?>
 
@@ -29,7 +32,9 @@ namespace Anax\View;
 
 <!-- header -->
 <?php if (regionHasContent("header")) : ?>
-<div class="outer-wrap outer-wrap-header">
+<!-- <div class="outer-wrap outer-wrap-header"> -->
+<!-- Added container for bootstrap -->
+<div class="outer-wrap outer-wrap-header container">
     <div class="inner-wrap inner-wrap-header">
         <div class="row">
             <div class="wrap-header">
@@ -82,6 +87,9 @@ namespace Anax\View;
 <?php foreach ($javascripts as $javascript) : ?>
 <script async src="<?= asset($javascript) ?>"></script>
 <?php endforeach; ?>
-
+<!-- Bootstrap JavaScript plugins -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

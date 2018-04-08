@@ -1,8 +1,4 @@
 /**
- * With additions for boostrap
- */
-
-/**
  * General setup for layout.
  */
 html {
@@ -27,9 +23,7 @@ body {
     padding: 0 0.5em;
 }
 
-p {
-    font-size: .8rem;
-}
+
 
 /**
  * Header
@@ -82,7 +76,7 @@ p {
  * Main
  */
 .outer-wrap-main {
-    min-height: 30rem;
+    min-height: 20em;
     margin-bottom: 2em;
 }
 
