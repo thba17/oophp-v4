@@ -1,0 +1,54 @@
+<?php
+namespace Thba17\Dice100;
+
+/**
+ * A dice throwing class
+ */
+class Dice
+{
+    private $sides;
+    private $throws;
+    private $result = [];
+
+    /**
+     * Public function to throw the Dice
+     *
+     * @param integer $throws Number of times to throw dice. Default 6 for standard dice.
+     * @return array An array containing each dice result for the series.
+     */
+    public function throwDice(int $throws = 6)
+    {
+        $this->throws = $throws;
+
+        if ($throws < 1) {
+            throw new DiceException("The dice must be thrown at least one (1) time.");
+        }
+
+        for ($i = 1; $i <= $this->throws; $i++) {
+            $this->result[$i] = rand(1, $this->sides);
+        }
+        return $this->result;
+    }
+
+    /**
+     * Constructor for class dice
+     *
+     * This is the constructor for the Dice class. It will take as in parameter
+     * the number of times the dice should be thrown.
+     *
+     */
+    public function __construct(int $sides = 6)
+    {
+        $this->sides = $sides;
+        // echo __METHOD__ . "\n";
+    }
+
+    /**
+     * Destructor for class Dice
+     */
+    public function __destruct()
+    {
+        // echo __METHOD__ . "\n";
+    }
+}
+

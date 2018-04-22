@@ -1,0 +1,96 @@
+<?php
+/**
+ * App specific routes.
+ * Version 3: Added game winner, stopGame, checkbox for viewing $_SESSION
+ */
+
+/**
+ *  This route is for the game " Dice 100"
+ */
+$app->router->any(["GET", "POST"], "dice100/dice100", function () use ($app) {
+    $data = [
+        "title" => "Tärningsspelet 100",
+    ];
+
+    // Check if user requests a new game
+    if (isset($_POST['doRestart'])) {
+        unset($_SESSION['game']);
+    }
+
+    // Get incoming
+    if (isset($_POST['doSetDices'])) {
+        $_SESSION["game"]["dices"] = $_POST["dices"];
+    }
+    $dices = isset($_SESSION["game"]["dices"]) ? $_SESSION["game"]["dices"] : 0;
+    $player = $_SESSION["game"]["player"] ?? "Visitor";
+
+    // Set session variables
+    $game = isset($_SESSION["game"]["game"]) ? $_SESSION["game"]["game"] : null;
+
+    if (isset($_SESSION["game"]["dices"]) && ($dices > 0)) {
+        //Dices selected, lock field, create game
+        $game = new \Thba17\Dice100\DiceGraphic($_SESSION["game"]["dices"]);
+        $_SESSION["game"]["disabled"] = "disabled";
+        $_SESSION["game"]["stopGame"] = $_SESSION["game"]["stopGame"] ?? null;
+        $_SESSION["game"]["player"] = $_SESSION["game"]["player"] ?? "Visitor";
+        $_SESSION["game"]["winner"] = $_SESSION["game"]["winner"] ?? null;
+        $_SESSION["game"]["Visitor"]["round"] = $_SESSION["game"]["Visitor"]["round"] ?? 0;
+        $_SESSION["game"]["Visitor"]["total"] = $_SESSION["game"]["Visitor"]["total"] ?? 0;
+        $_SESSION["game"]["Computer"]["round"] = $_SESSION["game"]["Computer"]["round"] ?? 0;
+        $_SESSION["game"]["Computer"]["total"] = $_SESSION["game"]["Computer"]["total"] ?? 0;
+        $_SESSION["game"]["game"] = $game;
+    } else {
+        // No dices selected, unlock field
+        $_SESSION["game"]["disabled"] = "";
+    }
+
+    // Player rolls dices. Calculate sum of round.
+    $class = [];
+    if (isset($_POST['doThrow'])) {
+        // echo $_SESSION["game"]["player"] . " throws dices ***";
+        $player = $_SESSION["game"]["player"];
+        $game->roll();
+        $class = $game->values();
+
+        if (array_search(1, $class)) {
+            $_SESSION["game"][$player]["round"] = 0;
+            if ($player == "Visitor") {
+                $_SESSION["game"]["player"] = "Computer";
+            } else {
+                $_SESSION["game"]["player"] = "Visitor";
+            }
+        } else {
+            $_SESSION["game"][$player]["round"] += $game->sum();
+            if (($_SESSION["game"][$player]["round"] + $_SESSION["game"][$player]["total"]) >= 100) {
+                $_SESSION["game"][$player]["total"] += $_SESSION["game"][$player]["round"];
+                $_SESSION["game"]["winner"] = $_SESSION["game"]["player"];
+                $_SESSION["game"]["stopGame"] = "disabled";
+            }
+        }
+    }
+
+    // Player stops the current round. Switch to next player. Update player score.
+    if (isset($_POST['doStop'])) {
+        //Stop current round and add round result to total.
+        $player = $_SESSION["game"]["player"];
+        $_SESSION["game"][$player]["total"] += $_SESSION["game"][$player]["round"];
+        $_SESSION["game"][$player]["round"] = 0;
+        if ($player == "Visitor") {
+            $_SESSION["game"]["player"] = "Computer";
+        } else {
+            $_SESSION["game"]["player"] = "Visitor";
+        }
+    }
+
+    // Add to $data array
+    $data += [
+        "game" => $game,
+        "class" => $class,
+        "player" => $player,
+        "dices" => $dices,
+    ];
+
+    // Add view and render page
+    $app->view->add("dice100/dice100", $data);
+    $app->page->render($data);
+});

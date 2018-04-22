@@ -1,0 +1,9 @@
+<?php
+namespace Thba17\Dice100;
+
+/**
+ * Exception class for DiceException.
+ */
+class DiceException extends \Exception
+{
+}

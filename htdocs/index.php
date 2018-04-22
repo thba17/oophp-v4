@@ -20,6 +20,8 @@ $di->setShared("app", $app);
 $app->setDI($di);
 
 // Start session
+$sessionName = substr(preg_replace('/[^a-z\d]/i', '', __DIR__), -30);
+session_name($sessionName);
 session_start();
 
 // Include user defined routes using $app-style.
