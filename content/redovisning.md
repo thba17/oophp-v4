@@ -21,17 +21,36 @@ Tycker det var en jättebra inledning till strukturen som mos gjorde i videoseri
 ######Vilken är din TIL för detta kmom?  
 Min TIL är att det var relativt enkelt att lägga till stylesheet från bootstrap. Den verkar länka in en miniferad stylesheet. Däremot vet man ju inte hur denna är definierad eller hur en sida reagerar om man inte når denna.
 
-
-
 <a href="#top">Back to top</a>
+
+
 
 Kmom02<a name="kmom02"></a>
 -------------------------
 
-Här är redovisningstexten
+######Hur gick det att överföra spelet “Gissa mitt nummer” in i din me-sida?
+Tack vare den utförliga videoserien gick det relativt bra. GET och POST gick bra men jag fick lite huvudbry på SESSION-delen. Till slut fungerar det som tänkt.
 
+######Berätta om hur du löste uppgiften med Tärningsspelet 100, hur du tänkte, planerade och utförde uppgiften samt hur du organiserade din kod?
+Initialt tänkte jag börja från början för att få bättre struktur på klasser och metoder. Insåg efter allt för lång tid att min bristande erfarenhet av OO satte begränsningar. Själva konceptet med OO är inte svårt (längre) men att designa koden med rätt metoder på rätt plats med arv blev en annan sak. Jag tog då över gissaspelets kod och utgick från den. Efter att spenderat allt för lång tid igen på att hitta vettig lösning med GET eller POST valde jag en SESSION baserad lösning.  
+Jag vet inte vad vi kommer göra i kommande kmom så tänker att $_SESSION kanske kommer användas till annat också. Jag valde då att arbeta med en multidimensionell array med ($_SESSION['game']) som "rot" och allt som hör till spelet under denna. När man startar om spelet blir det då lätt att resetta denna utan att påverka annat i $_SESSION. Vartefter jag utvecklade spelet blev denna array större och det vore intressant att veta hur en sådan lösning förhåller sig till en "professionell" variant. Jag har fortfarande svårt att få ihop i mitt huvud att objekten förstörs när sidan är klar.  
+Jag har bara en spelare mot datorn och man kan välja mellan 1-6 tärningar. När man gjort valet disablas denna funktion tills spelet startas om. Jag valde också att visa de grafiska tärningarna för både spelare och dator. När någon vinnit, disablas knapparna för att kasta och stoppa spelomgången. För att få lite bättre överblick av min SESSION array lade jag till en checkbox som när den är aktiverad visar hela $_SESSION['game'].  
+Förmodligen kanske det gått smidigare att lösa uppgiften om jag börjat med att skissa ett flödesschema för spelet. En sådan övning hade varit mer givande än UML-diagrammet för klasserna.  
+Jag gjorde extrauppgift 2 med valbart antal tärningar.
+
+######Berätta om din syn på modellering likt UML jämfört med verktyg som phpDocumentor. Fördelar, nackdelar, användningsområde? Vad tycker du om konceptet make doc?
+UML-diagrammet gick lätt att skapa med videon som förebild. Känns dock lite krystad och i det här läget mer som ett krav av akademisk karaktär men jag har inte så mycket erfarenhet av OO och kanske är det viktigare om man har en stor kodbas.  
+Att använda ett verktyg som automatiskt genererar dokumentation typ phpDocumentor och make doc är en strålande lösning och är även användbart i verkliga livet. Att kunna tagga koden med förklarande beskrivningar av funktioner, metoder, variabler och argument gör det enklare att dokumentera eftersom man kan ändra nära den kod som skall beskrivas. På jobbet använder vi SourceDoc för samma ändamål och jag fick använda Doxygen på en distanskurs i Linux vid UMU.
+
+######Hur känns det att skriva kod utanför och inuti ramverket, ser du fördelar och nackdelar med de olika sätten?
+Det är mycket enklare att skriva och testa koden utanför ramverket när man kan köra direkt från shellet utan att behöva fundera över routrar och vyer mm. Skall man bygga en webapplikation kan detta ge en kodbas. Däremot måste man fortsätta i ramverket för att få allt på plats så det ser bra ut och fungerar vettigt.
+
+######Vilken är din TIL för detta kmom?
+Min TIL är att det inte är att "bara" implementera något i ramverket även om denna variant hittills varit mer överskådlig än i databas-kursen. Har varit kul att hitta lite kluriga lösningar på olika HTML/PHP konstruktioner. Eftersom jag redan nu hamnat långt efter i planeringen har jag tappat stressmomentet och jag försöker hinna bättre förstå vad vi håller på med och hitta lösningar på olika saker. Efter att ha kikat lite på gjorda inlämningar ser jag att de som ligger på bana har längre erfarenhet av OO (JAVA, C# mm).
 
 <a href="#top">Back to top</a>
+
+
 
 Kmom03<a name="kmom03"></a>
 -------------------------

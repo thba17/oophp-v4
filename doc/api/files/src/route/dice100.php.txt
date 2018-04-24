@@ -55,6 +55,7 @@ $app->router->any(["GET", "POST"], "dice100/dice100", function () use ($app) {
             $_SESSION["game"][$player]["roundTotal"] += $_SESSION["game"][$player]["roundSum"];
             if (($_SESSION["game"][$player]["grandTotal"] + $_SESSION["game"][$player]["roundTotal"]) >= 100) {
                 // $_SESSION["game"][$player]["grandTotal"] += $_SESSION["game"][$player]["roundSum"];
+                $_SESSION["game"]["winnerTotal"] = $_SESSION["game"][$player]["grandTotal"] + $_SESSION["game"][$player]["roundTotal"];
                 $_SESSION["game"]["winner"] = $_SESSION["game"]["player"];
                 $_SESSION["game"]["stopGame"] = "disabled";
             }

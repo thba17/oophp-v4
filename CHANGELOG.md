@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 Semantic Versioning cannot be used as the exercise instructions specify final rev as 2.0.x
 
 ## [Unreleased]
-- Create and add a UML-diagram for Dice100 classes
+
+## [v2.0.4] - 2018-04-23
+### Added
+- Created and added a UML-diagram for Dice100 classes to doc/class
+- Destructor for class DiceGraphic
+- Report text for kmom02
+
+### Changed
+- Corrected game calcualations
 
 ## [v2.0.3] - 2018-04-22
 ### Added

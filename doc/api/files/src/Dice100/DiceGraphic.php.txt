@@ -49,11 +49,13 @@ class DiceGraphic extends DiceHand
         if (!array_search(1, $_SESSION["game"]["Computer"]["values"])) {
             $_SESSION["game"]["Computer"]["roundSum"] = $this->sum();
             $_SESSION["game"]["Computer"]["roundTotal"] += $_SESSION["game"]["Computer"]["roundSum"];
-            if (($_SESSION["game"]["Computer"]["grandTotal"] + $_SESSION["game"]["Computer"]["roundTotal"]) >= 100) {
+            $_SESSION["game"]["Computer"]["grandTotal"] += $_SESSION["game"]["Computer"]["roundTotal"];
+            if (($_SESSION["game"]["Computer"]["grandTotal"]) >= 100) {
+                $_SESSION["game"]["winnerTotal"] = $_SESSION["game"]["Computer"]["grandTotal"];
+                $_SESSION["game"]["Computer"]["grandTotal"] -= $_SESSION["game"]["Computer"]["roundTotal"];
                 $_SESSION["game"]["winner"] = $_SESSION["game"]["player"];
                 $_SESSION["game"]["stopGame"] = "disabled";
             }
-            $_SESSION["game"]["Computer"]["grandTotal"] += $_SESSION["game"]["Computer"]["roundTotal"];
         }
     }
 
@@ -66,6 +68,14 @@ class DiceGraphic extends DiceHand
     {
         $this->dices = $dices;
         parent::__construct($this->dices, self::SIDES);
+    }
+
+    /**
+     * Destructor for class DiceGraphic
+     */
+    public function __destruct()
+    {
+        // echo __METHOD__ . "\n";
     }
 }
 
