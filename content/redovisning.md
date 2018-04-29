@@ -55,8 +55,20 @@ Min TIL är att det inte är att "bara" implementera något i ramverket även om
 Kmom03<a name="kmom03"></a>
 -------------------------
 
-Här är redovisningstexten
+######Har du tidigare erfarenheter av att skriva kod som testar annan kod?
+Nej inte på riktigt. Vi gjorde ett "testprogram" på distanskursen C-programmering vid OU. Grundtanken var samma som nu, att testa funktioner och utfall. Att göra det mer strukturerat och på riktigt har jag inte gjort.
 
+######Hur ser du på begreppen enhetstestning och att skriva testbar kod?
+Gör man ett eget litet hobbyprojekt kanske det inte behövs. Har man däremot en större eller kommersiell applikation är det nödvändigt. Dels för att säkerställa att koden gör det man tänkt sig men också för att kunna visa på kvalitet mot kunder. Vid eventuella felfall kan man gå tillbaka till sina tester och få insikt i varför ett fel uppstått och varför det inte fastnat i testen. I ett enhetstest kan man testa olika funktioner och metoder med ingångsvärden. Det är då viktigta att även titta på giltiga och ogiltiga värden men också gränsvärden. Flyttal och avrundningar kan ge oväntat resultat. Även variabelstorlekar kan spela in om man blandar t. ex. 32 och 64 bitars värden.
+
+######Förklara kort begreppen white/grey/black box testing samt positiva och negativa tester, med dina egna ord.
+Vid white box testing har man kännedom om källkoden och man vill test de olika funktioner och metoder som finns. Detta kan dock även utsträckas till ett exekveringsflöde som inbegriper flera funktioner eller enheter i mjukvaran. Vid black box testing lämnar man källkodsnivån och fokuserar mer på en övergripande funktion. Gray box testing är ett mellenting mellan white och black där man har tillgång till delar av kod och strukturer samtidigt som man utvecklar test för funktionstestning på black-nivå.
+
+######Hur gick det att genomföra uppgifterna med enhetstester, använde du egna klasser som bas för din testning?
+Det gick gansk snabbt och smidigt. Jag använde den kod som kom med exempelbiblioteket enligt uppgiftsbeskrivningen. Lade till testmetoder för makeGuess() och lade även till ett test för exceptions. Här fick jag lite huvudbry eftersom i mitt tycke dokumentation och exempel är lite väl kortfattat.
+
+######Vilken är din TIL för detta kmom?
+Det var intressant att få bekantskap med phpUnit. Det var relativt lätt att komma igång med olika testfall.
 
 <a href="#top">Back to top</a>
 

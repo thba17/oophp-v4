@@ -7,6 +7,10 @@ Semantic Versioning cannot be used as the exercise instructions specify final re
 
 ## [Unreleased]
 
+## [v3.0.0] - 2018-04-29
+### Added
+- Report text for kmom03
+
 ## [v2.0.4] - 2018-04-23
 ### Added
 - Created and added a UML-diagram for Dice100 classes to doc/class
