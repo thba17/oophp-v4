@@ -7,6 +7,10 @@ Semantic Versioning cannot be used as the exercise instructions specify final re
 
 ## [Unreleased]
 
+## [v3.0.1] - 2018-04-29
+### Changed
+- Updated the documentation.
+
 ## [v3.0.0] - 2018-04-29
 ### Added
 - Report text for kmom03
