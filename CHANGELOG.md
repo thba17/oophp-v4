@@ -7,6 +7,14 @@ Semantic Versioning cannot be used as the exercise instructions specify final re
 
 ## [Unreleased]
 
+## [v4.0.0] - 2018-08-06
+### Added
+- New directory test
+- Added file test/config.php
+
+### Changed
+- Updated file .phpunit-xml
+
 ## [v3.0.1] - 2018-04-29
 ### Changed
 - Updated the documentation.
